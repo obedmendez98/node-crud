@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <center><h1 style="display: flow-root;">AGREGAR CONTACTOS</h1></center>
+    
+
+    <div>
+      <br>
+    </div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <form action="/add" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="firstname" placeholder="nombre">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="lastname" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="phone" placeholder="Telefono">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="email" placeholder="Email">
+            </div>
+            <center><button class="btn btn-primary col-md-10" type="submit"> Registrar </button></center>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="col-md-12">
+      <br>
+    </div>
+    <div class="col-md-4"></div>
+
+    <center><h1 style="display: flow-root;">LISTA DE CONTACTOS</h1></center>
+
+    <div class="col-md-12">
+      <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>telefono</th>
+            <th>correo</th>
+            <th>operaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < contactos.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td><strong><%= contactos[i].firstname %></strong></td>
+              <td><%= contactos[i].lastname%></td>
+              <td><%= contactos[i].phone%></td>
+              <td><%= contactos[i].email%></td>
+              <td>
+                <a href="/edit/<%= contactos[i]._id %>" class="btn btn-info">
+                  Editar
+                </a>
+                <a href="/delete/<%= contactos[i]._id %>"
+                  class="btn btn-danger">
+                  Eliminar
+                </a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

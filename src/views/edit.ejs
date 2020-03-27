@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <center><h1 style="display: flow-root;">EDITAR CONTACTO</h1></center>
+
+    <div>
+      <br>
+    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <form action="/edit/<%= contactos._id %>" method="post">
+
+            <div class="form-group">
+              <input class="form-control" type="text" name="firstname" value="<%= contactos.firstname %>" placeholder="nombre">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="lastname" value="<%= contactos.lastname %>" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="phone" value="<%= contactos.phone %>" placeholder="Telefono">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="email" value="<%= contactos.email %>" placeholder="Email">
+            </div>
+            <center>
+              <button class="btn btn-primary col-md-10 " type="submit"> Guardar </button>
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
